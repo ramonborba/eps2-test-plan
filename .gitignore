@@ -274,3 +274,6 @@ TSWLatexianTemp*
 
 # Output folder
 build/
+
+# Visual Studio Code config files
+.vscode

@@ -1,6 +1,6 @@
 SRC=main
-DOC_VERSION=v0.0
-TARGET=slb-std-temp-$(DOC_VERSION)
+DOC_VERSION=v0.1
+TARGET=slb-eps2-ql-tplan-$(DOC_VERSION)
 
 ifndef BUILD_DIR
 	BUILD_DIR=build
