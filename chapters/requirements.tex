@@ -1,0 +1,47 @@
+%
+% introduction.tex
+%
+% Copyright (C) 2024 by SpaceLab.
+%
+% EPS 2.0 Qualification Test Plan
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+% International License. To view a copy of this license,
+% visit http://creativecommons.org/licenses/by-sa/4.0/.
+%
+
+%
+% \brief Requirements chapter.
+%
+% \author Ramon de Araujo Borba <ramonborba97@gmail.com>
+%
+% \version 0.1.0
+%
+% \date 2024/02/14
+%
+
+\chapter{Requirements to Verify} \label{ch:srequirements}
+
+This test plan is intended to verify the requirements from the GOLDS-UFSC mission, associated the EPS 
+2.0 module.
+Those requirements are listed in \autoref{tab:requirements}.
+Along with its primary purpose, this test plan also aims to generate data for future performance comparison of the different EPS modules designed at SpaceLab, for this purpose an additional requirement was created (identified as REQ-PERF in \autoref{tab:requirements}) to represent this objective.
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{c p{105mm}}
+        \toprule
+        \textbf{ID} & \textbf{Requirement} \\
+        \midrule
+        \midrule
+        REQ-1    & The power system must be able to harvest solar energy. \\
+        REQ-2    & The power system must be able to store energy for use when GOLDS-UFSC is eclipsed. \\
+        REQ-3    & The power system must supply energy to all other modules. \\
+        REQ-PERF & Generate data for future performance comparisons. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Requirements to be verified.}
+    \label{tab:requirements}
+\end{table}
+
+An important note, since the mission requirement are few and broad, and considering that the EPS 2.0 module is developed for a multi-mission platform, some of it's functionalities do not have requirement directly related to it in this mission. So, in order to not leave any functionality untested, not all tests in the programme will have an specific associated requirement.

@@ -1,0 +1,380 @@
+%
+% Test Programme.tex
+%
+% Copyright (C) 2024 by SpaceLab.
+%
+% EPS 2.0 Qualification Test Plan
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+% International License. To view a copy of this license,
+% visit http://creativecommons.org/licenses/by-sa/4.0/.
+%
+
+%
+% \brief Test Programme chapter.
+%
+% \author Ramon de Araujo Borba <ramonborba97@gmail.com>
+%
+% \version 0.1.0
+%
+% \date 2024/02/14
+%
+
+\chapter{Test Programme} \label{ch:test-programme}
+
+The test programme will follow the test matrix presented in \autoref{tab:test-matrix}, based on the baseline matrix provided in the EPS Test Plan Guidelines \cite{eps-guidelines}.
+
+
+
+\begin{table}[htp]
+    \small
+    \centering
+    \begin{tabular}{clll}
+        \toprule
+        \textbf{Test Block} & \textbf{Test Activity} \\
+        \midrule
+        \midrule
+        \multirow{4}{*}{Inspection}     & Manufacturing Inspection              \\
+                                        & Electrical Inspection                 \\
+                                        & Mechanical Inspection                 \\
+                                        & Integration Inspection                \\
+        \midrule
+        \multirow{7}{*}{Functional}     & Harvesting System                     \\
+                                        & Output Regulators                     \\
+                                        & Output Control                        \\
+                                        & Communication Buses                   \\
+                                        & Sensor Readings                       \\
+                                        & Battery Management                    \\
+                                        & Protection Circuits                   \\
+        \midrule
+        \multirow{5}{*}{Performance}    & Module Power Consumption              \\
+                                        & Harvesting System Efficiency          \\
+                                        & Output Regulators Efficiency          \\
+                                        & Overall/System Efficiency             \\
+        \midrule
+        \multirow{3}{*}{Mission}        & System Initialization                 \\
+                                        & Basic Execution Flow                  \\
+                                        & Payload Activation Schedule           \\
+        \bottomrule
+    \end{tabular}
+    \caption{Test matrix}
+    \label{tab:test-matrix}
+\end{table}
+
+
+The baseline test matrix is organized in four test blocks: inspection, functional, performance and mission tests.
+In the next sections, a description of each block's objective and a list of the test activities and individual tests associated, will be presented.
+
+Test specifications, procedures and reports will be identified through each test's ID in the respective documents.
+
+
+\section{Inspection}
+
+The Inspection test block has the objective of verifying the integrity of the manufacturing process and conformance of the physical model with the design files, ensuring there are no workmanship defects or flaws in the model.
+
+\autoref{tab:inspection-tests} lists the test activities and individual tests associated with this block, and explanation of each activity is presented below.
+
+\begin{table}[htp]
+    \small
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Activity}                           & \textbf{Test}                                 & \textbf{ID}   \\
+        \midrule
+        \midrule
+        \multirow{2}{*}{Manufacturing Inspection}   & Packaging quality and integrity assessment    & INS-MAN-1     \\
+                                                    & Manufacturing standards assessment            & INS-MAN-2     \\
+        \midrule
+        \multirow{3}{*}{Mechanical Inspection}      & Board dimensions measurements                 & INS-MEC-1     \\
+                                                    & Board mass measurements                       & INS-MEC-2     \\
+                                                    & Mounting holes size and positioning           & INS-MEC-3     \\
+        \midrule
+        \multirow{4}{*}{Electrical Inspection}      & Components assessments                        & INS-ELE-1     \\
+                                                    & Solder quality and integrity assessment       & INS-ELE-2     \\
+                                                    & Power bus continuity test                     & INS-ELE-3     \\
+                                                    & First power up procedure                      & INS-ELE-4     \\
+        \midrule
+        \multirow{2}{*}{Integration Inspection}     & Connector pinout assessment                   & INS-INT-1     \\
+                                                    & Connector positioning assessment              & INS-INT-2     \\
+        \bottomrule
+    \end{tabular}
+    \caption{Inspection tests.}
+    \label{tab:inspection-tests}
+\end{table}
+
+\begin{itemize}
+    \item Manufacturing Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying the integrity of the manufacturing and transportation processes;
+        \item consists of visual inspection of the packaging conditions and conformance to the fabrication standards requirements;
+    \end{itemize}
+
+    \item Electrical Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying the electrical integrity of the module;
+        \item consists of verifying conformance with the electrical schematics, checking solder quality and integrity, checking for absence of short circuits and performing first power up of the module;
+    \end{itemize}
+
+    \item Mechanical Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying the physical properties of the board in relation to the design files;
+        \item consists of  measurements of board dimensions, mass, size and position of mounting holes;
+    \end{itemize}
+
+    \item Integration Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying that the module can be physically integrated with the satellite;
+        \item consists of checking the connectors pinout and positioning in relation to the design files.
+    \end{itemize}
+\end{itemize}
+
+
+\section{Functional}
+
+The Functional test block has the objective of verifying that the module is capable of executing all of its required functions according to its designed specifications.
+
+\autoref{tab:functional-tests} lists the test activities and individual tests associated with this block, and explanation of each activity is presented below.
+
+\begin{table}[htp]
+    \small
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Activity}                           & \textbf{Test}                                 & \textbf{ID}   \\
+        \midrule
+        \midrule
+        \multirow{2}{*}{Harvesting System}          & Boost converters test                         & FUN-HSYS-1      \\
+                                                    & MPPT algorithm test                           & FUN-HSYS-2      \\
+        \midrule
+        \multirow{6}{*}{Output Regulators}          & EPS/TTC regulator test                        & FUN-OREG-1     \\
+                                                    & OBDH regulator test                           & FUN-OREG-2     \\
+                                                    & Antenna regulator test                        & FUN-OREG-3     \\
+                                                    & Radio 0 regulator test                        & FUN-OREG-4     \\
+                                                    & Radio 1 regulator test                        & FUN-OREG-5     \\
+                                                    & Payloads regulator test                       & FUN-OREG-6     \\
+        \midrule
+        \multirow{1}{*}{Output Control}             & Output regulators enable pins test            & FUN-OCON-1     \\
+        \midrule
+        \multirow{3}{*}{Communcation Buses}         & Internal module peripherals comm test         & FUN-COMM-1     \\
+                                                    & OBDH communication test                       & FUN-COMM-2     \\
+                                                    & TT\&C communication test                      & FUN-COMM-3     \\
+        \midrule
+        \multirow{3}{*}{Sensor Readings}            & Voltage sensors readings test                 & FUN-SENS-1     \\
+                                                    & Current sensors readings test                 & FUN-SENS-2     \\
+                                                    & Temperature sensors readings test             & FUN-SENS-3     \\
+        \midrule
+        \multirow{2}{*}{Battery Management}         & Battery monitor IC configuration test         & FUN-BATM-1     \\
+                                                    & Battery monitor IC data readings test         & FUN-BATM-2     \\
+                                                    & Battery heater hardware test                  & FUN-BATM-3     \\
+                                                    & Battery heater control algorithm test         & FUN-BATM-4     \\
+        \midrule
+        \multirow{1}{*}{Protection Circuits}        & Battery monitor IC protection functions test  & FUN-PROT-1     \\
+        \bottomrule
+    \end{tabular}
+    \caption{Functional tests.}
+    \label{tab:functional-tests}
+\end{table}
+
+
+\begin{itemize}
+    \item Harvesting System:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the module's harvesting system
+        \item consists of testing the three boost converter channels as well as the MPPT perturb and observe algorithm;
+    \end{itemize}
+
+    \item Output Channel Regulators:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the output channels regulators;
+        \item the test consist of applying incremental loads to the six output voltage regulators, according to the expected limits during mission operation;
+    \end{itemize}
+
+    \item Output Channels Control:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the output channels control system;
+        \item consists of testing the operation of the controllable channels regulator's enable pins;
+    \end{itemize}
+
+    \item Communication Buses:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the communication buses and integrity of information;
+        \item consists of verifying the communication buses' configuration and protocols and verifying the integrity of the messages, for internal module peripherals communication buses as well as communication with OBDH and TT\&C modules.
+    \end{itemize}
+
+    \item Sensor Readings:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the sensors and the correctness of the readings;
+        \item consists of testing and comparison of the module's voltage, current and temperature sensors readings against external measurement instruments;
+    \end{itemize}
+
+    \item Battery Management:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation end functioning of the battery management system;
+        \item consists of testing the DS2777G+ battery monitoring IC, verifying the correct configuration and data readings, as well as testing of the battery heater resistors and its control algorithms;
+    \end{itemize}
+
+    \item Protection Circuits:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the modules protection circuits;
+        \item consists of testing the protection functions of the DS2777G+ battery monitoring IC.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+\section{Performance}
+
+The Performance test block has the objective of verifying and evaluating the performance aspects of the module in relation to its requirements.
+The main focus of this block is on evaluating the efficiency of the multiple conversion stages present in the module, as well as of the module as a hole.
+
+\autoref{tab:performance-tests} lists the test activities and individual tests associated with this block, and explanation of each activity is presented below.
+
+\begin{table}[htp]
+    \small
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Activity}                           & \textbf{Test}                                 & \textbf{ID}   \\
+        \midrule
+        \midrule
+        \multirow{1}{*}{Power Consumption}          & Isolated EPS power consumption measurement    & PERF-MCON-1     \\
+        \midrule
+        \multirow{1}{*}{Harvesting System Eff.}     & MPPT boost regulators efficiency measurement  & PERF-HARV-1     \\
+        \midrule
+        \multirow{6}{*}{Output Regulators Eff.}     & EPS/TTC regulator efficiency                  & PERF-OREG-1     \\
+                                                    & OBDH regulator efficiency measurement         & PERF-OREG-2     \\
+                                                    & Antenna regulator efficiency measurement      & PERF-OREG-3     \\
+                                                    & Radio 0 regulator efficiency measurement      & PERF-OREG-4     \\
+                                                    & Radio 1 regulator efficiency measurement      & PERF-OREG-5     \\
+                                                    & Payloads regulator efficiency measurement     & PERF-OREG-6     \\
+        \midrule
+        \multirow{1}{*}{System Efficiency}          & Overall system efficiency measurement         & PERF-SYS-1     \\
+        \bottomrule
+    \end{tabular}
+    \caption{Performance tests.}
+    \label{tab:performance-tests}
+\end{table}
+
+\begin{itemize}
+    \item Power Consumption:
+    \begin{itemize}
+        \item has the purpose of evaluating the power consumption of the EPS 2.0 in isolation, in normal operating conditions, with no loads connected;
+        \item the test consist of measuring the power consumption of the module when powered through a bench power supply and no loads connected;
+    \end{itemize}
+
+    \item Harvesting System Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the harvesting system;
+        \item the test consist of simulating different operating points of the solar panels at the input of the boost converters and measuring output power;
+    \end{itemize}
+
+    \item Output Regulators Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the converters of the six output channels;
+        \item the tests consists of applying incremental loads to the regulator's output and measuring input and output power consumptions;
+    \end{itemize}
+
+    \item System Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the system as a hole, considering all conversion stages;
+        \item an analysis of the previous performance tests results may be used to evaluate system efficiency;
+    \end{itemize}
+
+\end{itemize}
+
+
+
+\section{Mission}
+
+The Mission test block has the objective of verifying the correct operation of the module in relation to the mission concept of operations.
+
+\autoref{tab:mission-tests} lists the test activities and individual tests associated with this block, and explanation of each activity is presented below.
+
+
+\begin{table}[htp]
+    \small
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Activity}                      & \textbf{Test}                                  & \textbf{ID}   \\
+        \midrule
+        \midrule
+        \multirow{1}{*}{System Initialization} & Execute system initialization procedure       & MISS-INIT-1     \\
+        \midrule
+        \multirow{1}{*}{Normal Execution Flow} & Execute normal execution flow                 & MISS-FLOW-1     \\
+        \midrule
+        \multirow{1}{*}{Payload Activation}    & Simulate payload activation schedule          & MISS-PYLD-1     \\
+        \bottomrule
+    \end{tabular}
+    \caption{Mission tests.}
+    \label{tab:mission-tests}
+\end{table}
+
+\begin{itemize}
+    \item System Initialization:
+    \begin{itemize}
+        \item has the purpose of evaluating the correct operation of the module during initialization;
+    \end{itemize}
+
+    \item Normal Execution Flow:
+    \begin{itemize}
+        \item has the purpose of evaluating the correct operation of the module during the normal execution flow defined in the documentation;
+    \end{itemize}
+
+    \item Payload Activation:
+    \begin{itemize}
+        \item has the purpose of evaluating the behavior of the module considering the payload activation schedule;
+    \end{itemize}
+
+\end{itemize}
+
+
+\section{Requirements Mapping}
+
+The \autoref{tab:req-mapping} relates the tests with the associated requirements.
+As stated before, not all tests have an direct associated requirement, and only the ones that have are listed.
+
+
+
+\begin{table}[htp]
+    \small
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Test ID}    & \textbf{Associated Requirement}   \\
+        \midrule
+        \midrule
+            FUN-HSYS-1      & REQ-1      \\
+            FUN-HSYS-2      & REQ-1      \\
+            FUN-OREG-1      & REQ-3      \\
+            FUN-OREG-2      & REQ-3      \\
+            FUN-OREG-3      & REQ-3      \\
+            FUN-OREG-4      & REQ-3      \\
+            FUN-OREG-5      & REQ-3      \\
+            FUN-OREG-6      & REQ-3      \\
+            FUN-OCON-1      & REQ-3      \\
+            FUN-COMM-1      & REQ-3      \\
+            FUN-COMM-2      & REQ-3      \\
+            FUN-COMM-3      & REQ-3      \\
+            FUN-SENS-1      & REQ-1      \\
+            FUN-SENS-2      & REQ-1      \\
+            FUN-BATM-1      & REQ-2      \\
+            FUN-BATM-2      & REQ-2      \\
+            FUN-BATM-3      & REQ-2      \\
+            FUN-BATM-4      & REQ-2      \\
+            PERF-MCON-1     & REQ-PERF      \\
+            PERF-HARV-1     & REQ-PERF      \\
+            PERF-OREG-1     & REQ-PERF      \\
+            PERF-OREG-2     & REQ-PERF      \\
+            PERF-OREG-3     & REQ-PERF      \\
+            PERF-OREG-4     & REQ-PERF      \\
+            PERF-OREG-5     & REQ-PERF      \\
+            PERF-OREG-6     & REQ-PERF      \\
+            PERF-SYS-1      & REQ-PERF      \\
+        \bottomrule
+    \end{tabular}
+    \caption{Requirements mapping.}
+    \label{tab:req-mapping}
+\end{table}
